@@ -65,15 +65,27 @@ public class Hypot {
 //        int bitmask = 1<<pos;
 //        int newnum=n-bitmask;
 //        System.out.println(newnum)
-      Scanner sc = new Scanner(System.in);
-      int m = sc.nextInt();
-      int n = sc.nextInt();
-      int sum = (m*(m-1)/2)  + (n*(n-1)/2);
-      System.out.println(sum);
+//      Scanner sc = new Scanner(System.in);
+//      int m = sc.nextInt();
+//      int n = sc.nextInt();
+//      int sum = (m*(m-1)/2)  + (n*(n-1)/2);
+//      System.out.println(sum);
+        Scanner sc = new Scanner(System.in);
+        int t= sc.nextInt();
+        while(t-->0) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
 
-
+            System.out.println(path_find(n, m));
+        }
     }
-
+static int path_find(int n , int m){
+        if(n==1||m==1){
+            return 1;
+        }else{
+            return path_find(n,m-1)+path_find(n-1,m);
+        }
+}
 
 }
 
